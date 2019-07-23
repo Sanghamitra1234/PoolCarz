@@ -21,9 +21,9 @@
 </div>
 <ng-template #tableClick>
     <div class="row" >
-        <button class="col-md-3 offset-1 btn btn-primary" >To Gotham</button>
-        <button class="col-md-3 offset-1 btn btn-primary" >From Gotham</button>
-        <button class="col-md-3 offset-1 btn btn-primary" >Others</button>
+        <button class="col-md-3 offset-1 btn btn-primary" (click)="changeTableWithEndToStart('to'); tableFiltered" >To Gotham</button>
+        <button class="col-md-3 offset-1 btn btn-primary" (click)="changeTableWithEndToStart('from') ;tableFiltered">From Gotham</button>
+        <button class="col-md-3 offset-1 btn btn-primary" (click)="changeTableWithEndToStart('others');tableFiltered">Others</button>
     </div>
     <a href="#" style="align-self:center">Select A Ride</a>
         <div class="table-responsive">   
@@ -47,3 +47,5 @@
             <button class="btn btn-primary">Offer a ride</button>
     
         </ng-template>
+
+    
