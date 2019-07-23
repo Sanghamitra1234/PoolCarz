@@ -1,0 +1,49 @@
+<p>Book Ride works</p>
+<div class="conatiner">
+<div class="row">
+<div class="col-md-5 offset-md-4 card">
+    <div class="card-header bg-primary">
+        Book A Ride
+    </div>
+    <div class="card-body">
+        <p>Pool Cars is an online application which enabled users to share rides with others.You can either book a rides
+            or you can offer a ride. Did we mention that this app is advertisement free?
+            To add on top of that its free of cost! So what are you waiting for? Check out the rides available and start Pcing
+        </p>
+    </div>
+    
+    <div *ngIf="clicked; else tableClick">
+        <button class="btn btn-primary" (click)="clicked=!clicked">Show all Rides</button> 
+        <button class="btn btn-primary">Offer a ride</button>
+</div>
+</div>
+</div>
+</div>
+<ng-template #tableClick>
+    <div class="row" >
+        <button class="col-md-3 offset-1 btn btn-primary" >To Gotham</button>
+        <button class="col-md-3 offset-1 btn btn-primary" >From Gotham</button>
+        <button class="col-md-3 offset-1 btn btn-primary" >Others</button>
+    </div>
+    <a href="#" style="align-self:center">Select A Ride</a>
+        <div class="table-responsive">   
+                <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                      <th>Start Point</th>
+                      <th>End Point</th>
+                      <th>Seat Available</th>
+                    </tr>
+                </thead>
+                    <tbody>
+                    <tr *ngFor="let book of rideDetails">
+                      <td>{{book.pickUp }}</td>
+                      <td>{{book.destination }}</td>
+                      <td>{{book.seatsLeft}}</td>
+                    </tr>
+                     </tbody>
+                </table>
+            </div>
+            <button class="btn btn-primary">Offer a ride</button>
+    
+        </ng-template>
